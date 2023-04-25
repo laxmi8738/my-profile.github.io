@@ -12,7 +12,62 @@
     <title>My Profile</title>
     <!-- jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  </head>
+    <style>
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  height: 75vh;
+ 
+  display: grid;
+  place-items: center;
+}
+.image {
+    width: 500px;
+    height: 406px;
+    position: relative;
+    cursor: pointer;
+}
+.image span {
+  position: absolute;
+  background: url(./best\ \(2\).jpg) no-repeat center/cover;
+  inset: 0;
+  transition: 0.6s ease-in-out;
+}
+span:nth-child(1) {
+  clip-path: polygon(0 0, 50% 0, 50% 50%, 0 50%);
+  transition-delay: 0;
+}
+span:nth-child(2) {
+  clip-path: polygon(50% 0, 100% 0, 100% 50%, 50% 50%);
+  transition-delay: 0.25s;
+}
+span:nth-child(3) {
+  clip-path: polygon(0 50%, 50% 50%, 50% 100%, 0 100%);
+  transition-delay: 0.5s;
+}
+span:nth-child(4) {
+  clip-path: polygon(50% 50%, 100% 50%, 100% 100%, 50% 100%);
+  transition-delay: 0.75s;
+}
+/* Hover Effects */
+.image:hover span:nth-child(1) {
+  transform: translate(-40px, -60px) rotate(-15deg);
+}
+.image:hover span:nth-child(2) {
+  transform: translate(40px, -100px) rotate(25deg);
+}
+.image:hover span:nth-child(3) {
+  transform: translate(-40px, 80px) rotate(15deg);
+}
+.image:hover span:nth-child(4) {
+  transform: translate(40px, 80px) rotate(-15deg);
+}
+
+    </style>  
+</head>
   <body>
 
     <nav class="navbar navbar-expand-lg navbar-light  text-uppercase">
@@ -43,8 +98,15 @@
                  <input type="button" value="More ME" class="bt2 mt-5">
             </div>
             <div class="col-lg-6">
-                <img src="./best (2).jpg" alt=""  class="img-fluid">
-            </div>
+                <section class="body">
+                    <div class="image">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                      </div>
+                </section>
+                        </div>
         </div>
     </div>
 
